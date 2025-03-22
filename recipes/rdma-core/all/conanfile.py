@@ -69,7 +69,7 @@ class PackageConan(ConanFile):
         tc = CMakeToolchain(self)
         # Shared libraries are built by default and even if ENABLE_STATIC is turned on,
         # the static libraries still have dependencies on the shared libraries.
-        # tc.variables["ENABLE_STATIC"] = not self.options.shared
+        tc.variables["ENABLE_STATIC"] = True
         tc.variables["NO_PYVERBS"] = True
         tc.variables["NO_MAN_PAGES"] = True
         # Otherwise get set to ${install_prefix}/car/run and the paths in
